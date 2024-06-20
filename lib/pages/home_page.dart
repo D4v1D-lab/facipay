@@ -23,9 +23,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               Row(
                 children: [
-                  InkWell(
+                  TextButton(
                     child: const Icon(Icons.arrow_back),
-                    onTap: () {
+                    onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -53,19 +53,28 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     height: 200,
                     decoration: BoxDecoration(
+                        boxShadow: const [
+                          BoxShadow(
+                              color: buttonColor,
+                              blurRadius: 1,
+                              spreadRadius: 2)
+                        ],
                         color: navColor,
                         borderRadius: BorderRadius.circular(10)),
                     alignment: Alignment.center,
                     child: const Stack(
                       children: [
-                        Text('Mi saldo',
+                        Text('Mi saldo pendiente',
                             style: TextStyle(fontSize: 25, color: buttonColor)),
                         Padding(
                             padding: EdgeInsets.only(
-                                top: 25), // Adjust the value as needed
+                                top: 30,
+                                left: 55), // Adjust the value as needed
                             child: Text('\$250.00',
                                 style: TextStyle(
-                                    fontSize: 25, color: buttonColor)))
+                                    fontSize: 25,
+                                    color: buttonColor,
+                                    fontWeight: FontWeight.bold)))
                       ],
                     )),
               ),
@@ -155,8 +164,25 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         )),
-                  )
+                  ),
                 ],
+              ),
+              Container(
+                width: double.infinity,
+                height: 45,
+                decoration: const BoxDecoration(color: navColor, boxShadow: [
+                  BoxShadow(color: buttonColor, blurRadius: 1, spreadRadius: 2)
+                ]),
+                child: const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    'Actividad Reciente',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

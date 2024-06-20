@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'FaciPay',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: background),
+        colorScheme: ColorScheme.fromSeed(seedColor: background2),
         useMaterial3: true,
       ),
       home: const LoginPage(),
