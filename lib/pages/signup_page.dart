@@ -16,37 +16,104 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Form(
-            key: _formkey,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 45, left: 45),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                        hintText: 'Nombre completo',
-                        hintStyle: TextStyle(color: navColor),
-                        border: OutlineInputBorder()),
-                    // The validator receives the text that the user has entered.
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Este campo es obligatorio llenarlo';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      if (_formkey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('Procesando información')));
-                      }
-                    },
-                    child: const Text('Enviar'))
-              ],
-            )),
+        child: Column(
+          children: [
+            const Text(
+              'Registrarse',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            Form(
+                key: _formkey,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(right: 45, left: 45, top: 5),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.person),
+                          hintText: 'Nombre completo',
+                          hintStyle: TextStyle(color: navColor),
+                        ),
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Este campo es obligatorio llenarlo';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(right: 45, left: 45, top: 10),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.email),
+                          hintText: 'Correo electrónico',
+                          hintStyle: TextStyle(color: navColor),
+                        ),
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Este campo es obligatorio llenarlo';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(right: 45, left: 45, top: 15),
+                      child: TextFormField(
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.lock),
+                          hintText: 'Contraseña',
+                          hintStyle: TextStyle(color: navColor),
+                          filled: true,
+                        ),
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Este campo es obligatorio llenarlo';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 45, left: 45, top: 15, bottom: 25),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.lock),
+                          hintText: 'Volver a escribir contraseña',
+                          hintStyle: TextStyle(color: navColor),
+                          filled: true,
+                        ),
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Este campo es obligatorio llenarlo';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          if (_formkey.currentState!.validate()) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Procesando información')));
+                          }
+                        },
+                        child: const Text('Enviar'))
+                  ],
+                )),
+          ],
+        ),
       ),
     );
   }
