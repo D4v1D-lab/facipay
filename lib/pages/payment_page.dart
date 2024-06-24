@@ -40,7 +40,7 @@ class _PayPageState extends State<PayPage> {
             child: CreditCard(
                 cardNumber: "5450 7879 4864 7854",
                 cardExpiry: "10/28",
-                cardHolderName: "",
+                cardHolderName: "David Martínez",
                 cvv: "456",
                 bankName: "Chase Bank",
                 cardType:

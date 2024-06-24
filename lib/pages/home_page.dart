@@ -69,9 +69,7 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                           boxShadow: const [
                             BoxShadow(
-                                color: buttonColor,
-                                blurRadius: 2,
-                                spreadRadius: 2)
+                                color: navColor, blurRadius: 2, spreadRadius: 2)
                           ],
                           color: buttonColor,
                           borderRadius: BorderRadius.circular(10)),
