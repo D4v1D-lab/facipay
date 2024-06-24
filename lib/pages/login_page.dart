@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     TextButton(
                         onPressed: () => const Text('empty'),
-                        child: const Text('Olvidó usuario o contraseña?'))
+                        child: const Text('¿Olvidó usuario o contraseña?'))
                   ],
                 ),
                 // login button
@@ -87,7 +87,7 @@ class LoginPage extends StatelessWidget {
                     const Expanded(
                         child: Align(
                       alignment: Alignment.centerRight,
-                      child: Text('No tengo cuenta?'),
+                      child: Text('¿No tengo cuenta?'),
                     )),
                     TextButton(
                       style: TextButton.styleFrom(

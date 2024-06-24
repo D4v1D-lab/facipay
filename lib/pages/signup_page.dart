@@ -19,6 +19,7 @@ class _RegisterState extends State<Register> {
       body: Center(
         child: SingleChildScrollView(
           child: Column(
+            // Título y botón atrás
             children: [
               Padding(
                 padding: const EdgeInsets.only(right: 150, bottom: 15),
